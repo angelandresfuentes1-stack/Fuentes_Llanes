@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AnimeLab - Sitio educativo de My Hero Academia para aprender HTML, CSS y JavaScript">
+  <title>AnimeLab - My Hero Academia Edition</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header con navegación -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">AnimeLab</h1>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Menú de navegación">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Inicio</a></li>
+          <li><a href="#characters" class="nav-link">Personajes</a></li>
+          <li><a href="#news" class="nav-link">Noticias</a></li>
+          <li><a href="#gallery" class="nav-link">Galería</a></li>
+          <li><a href="#contact" class="nav-link">Contacto</a></li>
+          <li><a href="#about" class="nav-link">Acerca de</a></li>
+        </ul>
+      </nav>
+      <button id="audioToggleBtn" class="theme-btn" title="Reproducir/Pausar música">🔇</button>
+      <button id="themeBtn" class="theme-btn" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección Hero -->
+    <section id="home" class="hero container">
+      <h2>Bienvenidos a AnimeLab</h2>
+      <p>Explora el universo de <strong>My Hero Academia</strong> mientras aprendes <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>. ¡Plus Ultra! 💪</p>
+      <div class="quick-actions">
+        <button id="showHint" class="btn">Ver pista (JS)</button>
+        <button onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})" class="btn">Ir a Galería</button>
+      </div>
+    </section>
+
+    <!-- Sección de Personajes -->
+    <section id="characters" class="container cards">
+      <h3>Personajes destacados de My Hero Academia</h3>
+      <div class="card-grid">
+        
+        <article class="card" onclick="showProfile('Midoriya')">
+          <div class="avatar avatar-1">
+            <img src="assets/thumb4.png" alt="Izuku Midoriya" class="avatar-img">
+          </div>
+          <h4>Izuku Midoriya</h4>
+          <p>Héroe en entrenamiento que heredó el poder de One For All.</p>
+          <button class="btn btn-outline">Ver Perfil</button>
+        </article>
+
+        <article class="card" onclick="showProfile('Bakugo')">
+          <div class="avatar avatar-2">
+            <img src="assets/thumb5.webp" alt="Katsuki Bakugo" class="avatar-img">
+          </div>
+          <h4>Katsuki Bakugo</h4>
+          <p>Amigo/Rival de Midoriya. Su Quirk le permite generar explosiones.</p>
+          <button class="btn btn-outline">Ver Perfil</button>
+        </article>
+
+        <article class="card" onclick="showProfile('Todoroki')">
+          <div class="avatar avatar-3">
+            <img src="assets/thumb6.jpg" alt="Shoto Todoroki" class="avatar-img">
+          </div>
+          <h4>Shoto Todoroki</h4>
+          <p>Hijo del héroe Endeavor, capaz de usar fuego y hielo.</p>
+          <button class="btn btn-outline">Ver Perfil</button>
+        </article>
+
+        <article class="card" onclick="showProfile('Uraraka')">
+          <div class="avatar avatar-4">
+            <img src="assets/thumb7.jpg" alt="Ochako Uraraka" class="avatar-img">
+          </div>
+          <h4>Ochako Uraraka</h4>
+          <p>Héroe de apoyo. Su Quirk le permite manipular la gravedad.</p>
+          <button class="btn btn-outline">Ver Perfil</button>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Sección de Noticias -->
+    <section id="news" class="container cards">
+      <h3>Próximos Estrenos y Noticias</h3>
+      <div class="card-grid">
+        
+        <article class="card">
+          <h4>¡Nueva temporada de MHA!</h4>
+          <p>La séptima temporada ha sido confirmada para finales de 2025.</p>
+          <small class="text-muted">Fecha: 15/09/2025</small>
+          <button class="btn btn-outline" onclick="showNewsModal('MHA-7')">Leer más</button>
+        </article>
+
+        <article class="card">
+          <h4>Detalles del spin-off de Mirko</h4>
+          <p>Se revela que la heroína conejo tendrá su propia serie en 2026.</p>
+          <small class="text-muted">Fecha: 01/10/2025</small>
+          <button class="btn btn-outline" onclick="showNewsModal('Mirko')">Leer más</button>
+        </article>
+
+        <article class="card">
+          <h4>Entrevista a Kohei Horikoshi</h4>
+          <p>El creador comenta sobre el desarrollo de los personajes y el final.</p>
+          <small class="text-muted">Fecha: 25/10/2025</small>
+          <button class="btn btn-outline" onclick="showNewsModal('Horikoshi')">Leer más</button>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section id="gallery" class="container">
+      <h3>Galería Extendida (Novedades)</h3>
+      <div class="gallery-grid">
+        <figure class="thumb" onclick="openLightbox('assets/thumb1.webp')">
+          <img src="assets/thumb1.webp" alt="Ilustración 1">
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/thumb2.webp')">
+          <img src="assets/thumb2.webp" alt="Ilustración 2">
+        </figure>
+        <figure class="thumb" onclick="openLightbox('assets/thumb3.jpg')">
+          <img src="assets/thumb3.jpg" alt="Ilustración 3">
+        </figure>
+      </div>
+    </section>
+
+    <!-- Sección Acerca de -->
+    <section id="about" class="container about-section">
+      <h3>Acerca de AnimeLab (Créditos)</h3>
+      <button id="toggleAboutBtn" class="btn btn-outline">Mostrar Información</button>
+      <div id="aboutContent" class="about-content">
+        <p>Este proyecto fue desarrollado por <strong>Angel Andres Fuentes Llanes</strong> para la asignatura Desarrollo Web.</p>
+        <p><strong>Asignatura:</strong> Desarrollo Web</p>
+        <p><strong>Grupo:</strong> TTD-4A</p>
+        <p><strong>Propósito:</strong> Demostrar la integración de HTML, CSS y JavaScript para el diseño de sitios dinámicos, incluyendo características avanzadas como temas dinámicos, animaciones y reproductores de audio.</p>
+        <p><strong>Temática:</strong> Inspirado en el universo de My Hero Academia, este proyecto busca combinar el aprendizaje con la pasión por el anime.</p>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="container">
+      <h3>Contacto</h3>
+      <form id="contactForm" class="form">
+        <label>
+          Nombre
+          <input type="text" name="name" id="name" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Correo
+          <input type="email" name="email" id="email" placeholder="tu@email.com" required>
+        </label>
+        <label>
+          Mensaje
+          <textarea name="message" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Enviar</button>
+          <button type="reset" class="btn btn-outline">Limpiar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer container">
+    <div id="socialLinks">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram" title="Instagram">📸</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube" title="YouTube">▶️</a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook" title="Facebook">📘</a>
+    </div>
+    <p>AnimeLab • Proyecto De Angel Andres Fuentes Llanes  <span id="currentYear"></span></p>
+    <p class="small">🦸 My Hero Academia Edition - Plus Ultra! 💪</p>
+  </footer>
+
+  <!-- Lightbox para galería -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <img id="lightboxImg" src="" alt="Vista ampliada">
+  </div>
+
+  <!-- Modal de Perfil de Personaje -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeProfileModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalInfo"></p>
+      <p><strong>Serie de Origen:</strong> <span id="modalOrigin"></span></p>
+    </div>
+  </div>
+
+  <!-- Modal de Noticias -->
+  <div id="newsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeNewsModal()">&times;</span>
+      <h3 id="newsModalTitle"></h3>
+      <p id="newsModalDate"></p>
+      <p id="newsModalContent"></p>
+    </div>
+  </div>
+
+  <!-- Reproductor de audio -->
+  <audio id="backgroundMusic" loop>
+    <source src="assets/My Hero Academia OST - You Say Run.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>
