@@ -1,0 +1,39 @@
+⚠️ IMPORTANTE - AUDIO FALTANTE ⚠️
+
+Para que el reproductor de música funcione correctamente, necesitas agregar un archivo llamado:
+
+📁 op.mp3
+
+En esta carpeta (assets/).
+
+OPCIONES PARA OBTENER EL AUDIO:
+================================
+
+1. OPENINGS DE MY HERO ACADEMIA (Asegúrate de tener los derechos):
+   - "The Day" - Porno Graffitti
+   - "Peace Sign" - Kenshi Yonezu
+   - "Odd Future" - UVERworld
+   - "Polaris" - BLUE ENCOUNT
+   - "No.1" - DISH//
+
+2. MÚSICA LIBRE DE DERECHOS:
+   - YouTube Audio Library
+   - Free Music Archive (freemusicarchive.org)
+   - Incompetech (incompetech.com)
+   - Bensound (bensound.com)
+
+3. CÓMO CONVERTIR A MP3:
+   - Usa un convertidor online como: cloudconvert.com
+   - O usa software como Audacity (gratis)
+
+PASOS:
+======
+1. Descarga o prepara tu archivo de audio
+2. Conviértelo a formato MP3 si es necesario
+3. Renómbralo exactamente como: op.mp3
+4. Colócalo en esta carpeta (assets/)
+5. Recarga la página web
+
+El botón de audio (🔇/🔊) funcionará automáticamente una vez que agregues el archivo.
+
+¡Plus Ultra! 💪
